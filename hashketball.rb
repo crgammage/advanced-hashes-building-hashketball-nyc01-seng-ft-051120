@@ -104,3 +104,16 @@ def game_hash
   }
 }
 end
+
+def num_points_scored(players_name)
+answer = nil
+  game_hash.each do |team, team_details|
+    team_roster = team_details[:players]
+    team_roster.find do |details|
+      if details[:player_name] == players_name
+        answer = details[:points]
+      end
+    end
+  end
+  answer
+end
