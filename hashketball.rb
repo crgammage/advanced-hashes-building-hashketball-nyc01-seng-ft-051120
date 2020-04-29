@@ -117,3 +117,16 @@ answer = nil
   end
   answer
 end
+
+def shoe_size(players_name)
+  answer = nil
+  game_hash.each do |team, team_details|
+    team_roster = team_details[:players]
+    team_roster.find do |details|
+      if details[:player_name] == players_name
+        answer = details[:shoe]
+      end
+    end
+  end
+  answer
+end
