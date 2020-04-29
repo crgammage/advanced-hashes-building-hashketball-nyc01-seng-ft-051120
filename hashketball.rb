@@ -140,3 +140,11 @@ def team_colors(team_name)
   end
   answer
 end
+
+def team_names
+  team_names = []
+  game_hash.collect do |team, team_details|
+    team_names << team_details[:team_name]
+  end
+  team_names
+end
